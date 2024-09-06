@@ -14,7 +14,6 @@ for a in contacts_list:
   H.append(''.join(a.pop(0)))
   b=' '.join(H).split(' ')
   new_list.append(((b[:3]+ a[0:4])))
-# pprint(new_list)
 
           
 for i in new_list:
@@ -27,7 +26,6 @@ for i in new_list:
     for line in new_list:
         if line not in contact_list:
             contact_list.append(line)
-# pprint(contact_list)
 
 
 pattern = r"(\+7|8)?\s?\(?(\d{3})\)?[-\s]?(\d{3})[-\s]?(\d{2})[-\s]?(\d{2})([\-\s]*)\(?(доб.)?\s*(\d+)?\)?"
@@ -38,7 +36,6 @@ for i in contact_list:
     text=','.join(i)
     result = re.sub(pattern, subst, text)
     result_list.append(result.split(','))
-print(result_list)
 
 
 with open('phonebook.csv', 'w', encoding='utf-8', newline='') as f:
